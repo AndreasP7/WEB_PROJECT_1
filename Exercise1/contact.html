@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Contact page">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <header>
+            <h1>Website Title</h1>
+            <img src="../assets/logo.png" alt="logo" />
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="categories.html">Categories</a></li> 
+                <li><a href="contact.html">Contact</a></li> 
+                <li><a href="about-us.html">About Us</a></li>
+            </ul>
+        </nav>  
+        <main>
+            <h2>CONTACT US</h2>
+            <form>
+                <fieldset>
+                    <legend>Complaint form</legend>
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname" placeholder="Giannis" required><br>
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname" placeholder="Giannopoulos" required><br>
+                    <label for="mail">E-mail:</label><br>
+                    <input type="text" id="mail" name="mail" placeholder="p310000@aueb.gr" required><br>
+                    <label for="cellnum">Cell phone number:</label><br>
+                    <input type="number" id="cellnum" name="cellnum" placeholder="699999999" pattern="[0-9]{10}" required><br>
+                    <label for="id">Post id:</label><br>
+                    <input type="number" id="id" name="id" placeholder="1243500" required><br>
+                    <label for="descr">Complaint description:</label><br>
+                    <input type="text" id="descr" name="descr" maxlength="500" required><br>
+                    <input type="submit" value="Submit" >
+                    <p>
+                        *Description length up to 500 characters, all fields are mandatory.
+                    </p>
+                </fieldset>
+            </form>
+            
+        </main>
+        <footer>
+            <a href="">Twitter</a> 
+            <a href="">Facebook</a> 
+            <a href="">email@gmail.com</a> |
+            <a href="">21000000000</a>
+
+        </footer>
+    </body>
+</html>
