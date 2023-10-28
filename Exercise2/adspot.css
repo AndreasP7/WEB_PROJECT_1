@@ -1,0 +1,30 @@
+header{background-color: rgb(181, 219, 205);}
+main{background-color: rgb(224, 241, 236);}
+footer{background-color: rgb(163, 197, 186);}
+table{border-collapse: collapse;}
+th,td{border: 1px solid black;font-family: monospace;}
+#page_title{color: rgb(53, 63, 153);
+    font-family: 'Michroma', 'Open Sans', Arial, sans-serif; 
+    background-color: rgb(231, 247, 241);}
+#page_nav{color: rgb(32, 41, 121);
+font-family:fantasy ;
+background-color: rgb(163, 197, 186);
+}
+#page_nav:hover{font-size: 1.05em;}
+#logo_image{mix-blend-mode:difference;
+    filter: drop-shadow(10px 10px 10px #5de9ee);
+}
+.head_header{font-family:  Georgia, 'Times New Roman', Times, serif ;
+    overflow:hidden;
+    animation:typing 3s forwards;
+}
+.small_header{font-family:  Georgia, 'Times New Roman', Times, serif ;
+}
+.basic_paragraph{font-family:monospace}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+.product_image{overflow: hidden;}
+.product_image img{transition: .5s ease;}
+.product_image:hover img{transform: scale(1.1);}
