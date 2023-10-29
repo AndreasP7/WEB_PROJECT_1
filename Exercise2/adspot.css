@@ -11,7 +11,7 @@ font-family:fantasy ;
 background-color: rgb(163, 197, 186);
 }
 #page_nav:hover{font-size: 1.05em;}
-#logo_image{mix-blend-mode:difference;
+#logo_image{
     filter: drop-shadow(10px 10px 10px #5de9ee);
 }
 .head_header{font-family:  Georgia, 'Times New Roman', Times, serif ;
