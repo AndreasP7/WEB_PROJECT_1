@@ -28,3 +28,24 @@ background-color: rgb(163, 197, 186);
 .product_image{overflow: hidden;}
 .product_image img{transition: .5s ease;}
 .product_image:hover img{transform: scale(1.1);}
+.submit:active{background-color:red;}
+.form{
+    background:white;
+    animation:bounce 1.3s infinite;
+    &:hover{animation-play-state: paused;}
+}
+.submit{
+    font-family:monospace;
+    background-color: rgb(163, 197, 186);
+}
+.submit:hover {
+   
+    transform: translateY(3px);
+    background-color: rgb(126, 187, 168);
+    border-radius: 0%;
+  }
+@keyframes bounce {
+   50% {
+      transform: translate(0, 4px);
+    }
+  } 
