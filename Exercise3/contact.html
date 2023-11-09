@@ -7,41 +7,43 @@
         <link href="adspot.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <header>
-            <h1 id="page_title">AdSpot</h1>
-            <a href="index.html"><img id="logo_image" src="../assets/logo.png" alt="logo" /></a>
+        <header class="grid_header">
+            <a href="index.html"><img id="logo_image" class="grid_header" src="../assets/logo.png" alt="logo" /></a>
         </header>
-        <nav id="page_nav">
-            <ul>
-                <li><a id="page_nav" href="index.html">Home</a></li> 
-                <li><a id="page_nav" href="categories.html">Categories</a></li> 
-                <li><a id="page_nav" href="contact.html">Contact</a></li> 
-                <li><a id="page_nav" href="about-us.html">About Us</a></li>
+        <nav id="page_nav" class="grid_header">
+            <ul class="link_container">
+                <li><a class="nav_link" href="index.html">Home</a></li> 
+                <li><a class="nav_link"  href="categories.html">Categories</a></li> 
+                <li><a class="nav_link" href="contact.html">Contact</a></li> 
+                <li><a class="nav_link" href="about-us.html">About Us</a></li>
             </ul>
         </nav>
         <main>
             <h2 class="head_header">CONTACT US</h2>
-            <form class="form">
-                <fieldset>
-                    <legend class="small_header">Complaint form</legend>
-                    <label class="basic_paragraph" for="fname">First name:</label><br>
-                    <input type="text" id="fname" name="fname" placeholder="Giannis" required><br>
-                    <label class="basic_paragraph" for="lname">Last name:</label><br>
-                    <input type="text" id="lname" name="lname" placeholder="Giannopoulos" required><br>
-                    <label class="basic_paragraph" for="mail">E-mail:</label><br>
-                    <input type="text" id="mail" name="mail" placeholder="p310000@aueb.gr" required><br>
-                    <label class="basic_paragraph" for="cellnum">Cell phone number:</label><br>
-                    <input type="number" id="cellnum" name="cellnum" placeholder="699999999" pattern="[0-9]{10}" required><br>
-                    <label class="basic_paragraph" for="id">Post id:</label><br>
-                    <input type="number" id="id" name="id" placeholder="1243500" required><br>
-                    <label class="basic_paragraph" for="descr">Complaint description:</label><br>
-                    <input type="text" id="descr" name="descr" maxlength="500" required><br>
-                    <input class="submit" type="submit" value="Submit" >
-                    <p class="basic_paragraph">
-                        *Description length up to 500 characters, all fields are mandatory.
-                    </p>
-                </fieldset>
-            </form>
+            <section class = "main_container">
+                <form class="form">
+                    <fieldset>
+                        <legend class="small_header">Complaint form</legend>
+                        <label class="basic_paragraph" for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname" placeholder="Giannis" required><br>
+                        <label class="basic_paragraph" for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname" placeholder="Giannopoulos" required><br>
+                        <label class="basic_paragraph" for="mail">E-mail:</label><br>
+                        <input type="text" id="mail" name="mail" placeholder="p310000@aueb.gr" required><br>
+                        <label class="basic_paragraph" for="cellnum">Cell phone number:</label><br>
+                        <input type="number" id="cellnum" name="cellnum" placeholder="699999999" pattern="[0-9]{10}" required><br>
+                        <label class="basic_paragraph" for="id">Post id:</label><br>
+                        <input type="number" id="id" name="id" placeholder="1243500" required><br>
+                        <label class="basic_paragraph" for="descr">Complaint description:</label><br>
+                        <input type="text" id="descr" name="descr" maxlength="500" required><br>
+                        <input class="submit" type="submit" value="Submit" >
+                        <p class="basic_paragraph">
+                            *Description length up to 500 characters, all fields are mandatory.
+                        </p>
+                    </fieldset>
+                </form>
+            </section>
+            
             
         </main>
         <footer>
