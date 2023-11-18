@@ -10,6 +10,10 @@ header{
     
 }
 
+img{
+    max-width: 100%;
+}
+
 .grid_header{
     max-height: 5em;
 }
@@ -469,9 +473,9 @@ a,.small_header{
 
     #categories_container{
         justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: nowrap;
+        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: wrap;
     
 
     }
