@@ -1,48 +1,83 @@
+/*Background colors for header, main and footer*/
 header{
-    background-color: rgb(181, 219, 205);}
-main{background-color: rgb(224, 241, 236);}
-footer{background-color: rgb(163, 197, 186);}
-table{border-collapse: collapse;}
-th,td{border: 1px solid black;font-family: monospace;}
-#page_title{color:black;
-    font-family: 'Michroma', 'Open Sans', Arial, sans-serif; 
-    background-color: rgb(231, 247, 241);}
-#page_nav{color: rgb(32, 41, 121);
-font-family:fantasy ;
-background-color: rgb(163, 197, 186);
+    background-color: rgb(163, 197, 186);
 }
-#page_nav:hover{font-size: 1.05em;}
+main{
+    background-color: rgb(224, 241, 236);
+}
+footer{
+    background-color: rgb(163, 197, 186);
+}
+/*Customize table's borders*/
+table{
+    border-collapse: collapse;
+}
+th,td{
+    border: 1px solid black;font-family: monospace;}
+
+
+/*Setting navigation menu font and background*/    
+#page_nav{
+    color: rgb(12, 12, 12);
+    font-family:fantasy ;
+    background-color: rgb(163, 197, 186);
+}
+/*Navigation Menu hover effect*/
+#page_nav:hover{
+    color: white;
+}
+/*Shadow effect for the main logo*/
 #logo_image{
-    filter: drop-shadow(10px 10px 10px #5de9ee);
+    filter: drop-shadow(5px 5px 5px #0f0f0f);
 }
-.head_header{font-family:  Georgia, 'Times New Roman', Times, serif ;
+/*Font and animation for the main header*/
+.head_header{
+    font-family:  Georgia, 'Times New Roman', Times, serif ;
     overflow:hidden;
     animation:typing 3s forwards;
 }
-.small_header{font-family:  Georgia, 'Times New Roman', Times, serif ;
-
-
+/*Font for smaller headers*/
+.small_header{
+    font-family:  Georgia, 'Times New Roman', Times, serif ;
 }
+/*Headers in hyperlinks customization*/
 a,.small_header{
     text-decoration: none;
     color: black;
 }
+/* Each container contains one ad*/
 .ad-container{
     background-color: white;
 }
-.basic_paragraph{font-family:monospace}
+/*Paragraph class*/
+.basic_paragraph{
+    font-family:monospace
+}
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
-.product_image{overflow: hidden;}
-.product_image img{transition: .5s ease;}
-.product_image:hover img{transform: scale(1.1);}
-.submit:active{background-color:red;}
+/*Class for images in ads*/
+.product_image{
+    overflow: hidden;
+}
+.product_image img{
+    transition: .5s ease;
+}
+.product_image:hover img{
+    transform: scale(1.1);
+}
+
+/*Form submit*/
+.submit:active{
+    background-color:red;
+}
 .form{
     background:white;
     animation:bounce 1.3s infinite;
-    &:hover{animation-play-state: paused;}
+}
+.form:hover{
+    animation-play-state:paused;
 }
 .submit{
     font-family:monospace;

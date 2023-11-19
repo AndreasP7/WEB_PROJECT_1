@@ -1,6 +1,8 @@
+
+/*Header grid position and background color*/
 header{
     background-color: rgb(163, 197, 186);
-    grid-column: 1/2;
+    grid-column: 1/2; /*Header is on first column and first row of the body*/
     grid-row: 1/2;
     align-items: center;
     justify-content: center;
@@ -8,30 +10,33 @@ header{
     
     
 }
-
+/*Class to set same height to header and navigation menu*/
 .grid_header{
     max-height: 5em;
 }
 
+/*Main is a grid of 1 column and 2 rows*/
 main{
     background-color: rgb(224, 241, 236);
-    grid-column: 2/3;
+    grid-column: 2/3; /*placed in the central column of body*/  
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 2fr;
 
     
 }
+/*The body is a grid of 3 columns and 3 rows*/
 body{
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: auto 1fr auto;
-    height: 100vh;
+    height: 100vh; /*Used to stick the footer at the bottom of the screen*/
     margin: 0;
     
     
     
 }
+/*Footer is a flexbox, positioned in the last row of the body grid. Takes all 3 columns*/
 footer{
     background-color: rgb(163, 197, 186);
     grid-column: 1/4;
@@ -41,33 +46,29 @@ footer{
     display: flex;
     justify-content: center;
     gap: 2%;
-
 }
+/*Customize table's borders*/
 table{
     border-collapse: collapse;
 }
 th,td{
     border: 1px solid black;font-family: monospace;
 }
-#page_title{color:black;
-    font-family: 'Michroma', 'Open Sans', Arial, sans-serif; 
-    background-color: rgb(231, 247, 241);
-}
+
+/*Navigation menu is a flexbox*/
 #page_nav{
     color: rgb(12, 12, 12);
     font-family:fantasy ;
     background-color: rgb(163, 197, 186);
-    grid-column: 2/4;
+    grid-column: 2/4; /*positioned in the 2nd and 3rd collumn of the body grid*/
+    grid-row: 1/2;/*first row, next to the header*/
     display: flex ;
     justify-content: flex-end;
     align-items: center;
     padding-right: 2%;
-    
-    
-    
-    
-
 }
+
+/*class for the menu list*/
 .link_container{
     display: flex;
     justify-content: space-evenly;
@@ -76,10 +77,12 @@ th,td{
     
     
 }
-
+/*hover effect fot the menu items */
 .nav_link:hover{
     color: white;
 }
+
+/*main logo settings*/
 #logo_image{
     filter: drop-shadow(5px 5px 5px #0f0f0f);
     object-fit: contain;
@@ -88,10 +91,12 @@ th,td{
     
     
 }
-.head_header{font-family:  Georgia, 'Times New Roman', Times, serif ;
+/*main header*/
+.head_header{
+    font-family:  Georgia, 'Times New Roman', Times, serif ;
     overflow:hidden;
     animation:typing 3s forwards;
-    grid-column: 1/2;
+    grid-column: 1/2; /*first row first column of the "main" grid*/
     grid-row: 1/2;
     text-align: center;
     
@@ -106,25 +111,29 @@ a,.small_header{
     text-decoration: none;
     color: black;
 }
+/*contains one ad*/
 .ad-container{
     background-color: white;
     border-radius: 20px;
     padding: 2em;
-    flex: 1 1 500px;
+    flex: 1 1 500px; /*is inside of a flexbox*/
     max-width: 50%;
     
     
     
 }
+/*the whole container is a link*/
 .ad_link{
-    display: grid;
+    display: grid; /*a grid of 6 rows and 2 columns*/
     place-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6,auto) ;
 
 }
+
+/*main section for ads, contains many ads*/
 .ads_main{
-    display:flex;
+    display:flex; /*displayed as a flex*/
     flex-wrap: wrap;
     gap: 20px;
     padding-left: 2%;
@@ -138,20 +147,22 @@ a,.small_header{
     justify-content: space-evenly;
     align-items: center;
 }
+/*main section for the dedicated page of one ad*/
 .ad_main{
     grid-column: 1/2;
     grid-row: 2/3;
-    display: grid;
+    display: grid; /*grid of 2 columns and 3 rows*/
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
 }
-
-.ad_main .product_image{
+/*image of the ad*/
+.ad_main > .product_image{
     grid-column: 1/2;
     grid-row:1/2 ;
     padding: 2%;
     
 }
+
 .ad_basic_info{
     grid-column: 2/3;
     grid-row:1/2 ;
@@ -196,7 +207,10 @@ a,.small_header{
     grid-column: 1/2;
     grid-row: 3/4;
 }
-.product_image{
+
+
+/*image of ad in search results*/
+.ad_link > .product_image{
     grid-column: 1/3;
     grid-row: 4/5;
     max-width: 100%;
@@ -208,7 +222,7 @@ a,.small_header{
 }
 
 
-
+/*Paragraph class*/
 .basic_paragraph{
     font-family:monospace;
 }
@@ -216,6 +230,7 @@ a,.small_header{
     from { width: 0 }
     to { width: 100% }
 }
+/*Class for images in ads*/
 .product_image{
     overflow: hidden;
 }
@@ -231,8 +246,11 @@ a,.small_header{
 .form{
     background:white;
     animation:bounce 1.3s infinite;
-    &:hover{animation-play-state: paused;}
 }
+.form:hover{
+    animation-play-state:paused;
+}
+/*Form submit*/
 .submit{
     font-family:monospace;
     background-color: rgb(163, 197, 186);
@@ -242,19 +260,21 @@ a,.small_header{
     transform: translateY(3px);
     background-color: rgb(126, 187, 168);
     border-radius: 0%;
-  }
+}
 
+/*column of welcome main*/
 .welcome_collumn{
     background-color: white;
     border-radius: 20px;
     padding: 16px;
     margin: 1em;
     flex-direction: row;
-	flex: 1 1 300px;
+	flex: 1 1 300px; /*we want each flex to be the same size*/
     
     
 
 }
+/*main container in main, below head_header*/
 .main_container{
     grid-column: 1/2;
     grid-row: 2/3;
@@ -262,23 +282,23 @@ a,.small_header{
     margin-bottom: auto;
     margin-top: 2em;
 }
+/*container of welcome section in home page*/
 #welcome_container{
     display: flex;
     justify-content: center;
-	
-
-    
-
 }
+/*container of categories , flexbox with categories*/
 #categories_container{
     display: flex;
     list-style-type: none;
-    justify-content: space-evenly;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-left: 0%;
     
     
 
 }
+/*about us container, flex display*/
 #about_container{
     display: flex;
     flex-direction: column;
@@ -287,7 +307,7 @@ a,.small_header{
     padding: 5%;
 }
 
-
+/*in about us page, each creator has a container*/
 .creator_container{
     display: grid;
     grid-template-columns: auto auto;
@@ -308,22 +328,25 @@ a,.small_header{
     height: auto;
 
 }
-
+/*box for each category, organised as a grid*/
 .category_item{
     background-color: white;
     border-radius: 20px;
     padding: 16px;
     margin: 1em;
-    flex-direction: column;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr fit-conent(20%);
+    grid-template-rows: 1fr 1fr fit-content(20%);
     place-items: center;
+    flex: 1 0 20%;
+    
     
 }
+/*list of sub-categories*/
 .category_list{
     grid-row: 3/4;
 }
+/*images of categories*/
 .category_image{
     grid-column: 1/2;
     grid-row: 1/2;
