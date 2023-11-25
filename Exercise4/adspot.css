@@ -386,7 +386,7 @@ a,.small_header{
 
 
 /*settings for smartphone view*/  
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
     /*body has one column now and 4 rows*/
     body{
         grid-template-columns: auto;
@@ -489,7 +489,7 @@ a,.small_header{
 }
 
 /*settings for tablet view*/  
-@media only screen and (min-width: 768px) and (max-width: 900px){
+@media only screen and (min-width: 600px) and (max-width: 900px){
     
     /*body is now 2 columns*/  
     body{

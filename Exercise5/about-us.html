@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="description" content="Ad and marketplace website.">
         <link href="adspot.css" rel="stylesheet" type="text/css">
+        <script src="sign-up.js" type="text/javascript"></script>
     </head>
 
     
@@ -14,10 +15,12 @@
         </header>
         <nav id="page_nav" class="grid_header">
             <ul class="link_container">
-                <li><a class="nav_link" href="index.html">Home</a></li> 
-                <li><a class="nav_link"  href="categories.html">Categories</a></li> 
-                <li><a class="nav_link" href="contact.html">Contact</a></li> 
-                <li><a class="nav_link" href="about-us.html">About Us</a></li>
+                <li><a  class="nav_link" href="index.html">Home</a></li> 
+                <li><a  class="nav_link" href="categories.html">Categories</a></li> 
+                <li><a  class="nav_link" href="contact.html">Contact</a></li> 
+                <li><a  class="nav_link" href="about-us.html">About Us</a></li>
+                <li><a  id="sign-up-button" href="sign-up.html">Sign Up</a></li>
+
             </ul>
         </nav>
         <main>
@@ -60,10 +63,10 @@
             </section>
         </main>
         <footer>
-            <a href=""><img id="x_logo" src="../assets/x-logo.png" width="50" height="50" alt="X"></a> 
-            <a href=""><img src="../assets/facebook-logo.png" width="50" height="50" alt="Facebook"></a> 
-            <a href=""><img src="../assets/email.png" width="50" height="50" alt="Email"></a> 
-            <a href=""><img src="../assets/telephone.png" width="50" height="50" alt="Telephone"></a>
+            <a href="https://twitter.com/home"><img id="x_logo" src="../assets/x-logo.png" width="50" height="50" alt="X"></a> 
+            <a href="https://facebook.com"><img src="../assets/facebook-logo.png" width="50" height="50" alt="Facebook"></a> 
+            <a href="#" onclick="copyToClipboard('Email'); return false;" id="Email"><div class="footer-hidden" id="Email-text">email@example.com</div><img src="../assets/email.png" width="50" height="50" alt="Email"></a> 
+            <a href="#" onclick="copyToClipboard('Phone'); return false;" id="Phone"><div class="footer-hidden" id="Phone-text">+30 2100000000</div><img src="../assets/telephone.png" width="50" height="50" alt="Telephone"></a>
         </footer>
     </body>
 </html>

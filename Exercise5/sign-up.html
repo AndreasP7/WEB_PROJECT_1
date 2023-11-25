@@ -19,136 +19,141 @@
                 <li><a  class="nav_link" href="categories.html">Categories</a></li> 
                 <li><a  class="nav_link" href="contact.html">Contact</a></li> 
                 <li><a  class="nav_link" href="about-us.html">About Us</a></li>
+                <li><a  id="sign-up-button" href="sign-up.html">Sign Up</a></li>
+
             </ul>
             
         </nav>
         <main>
-            <form class="form_signup" autocomplete="on" onsubmit="event.preventDefault(); validateForm();">
-                <fieldset class="fieldset">
-                    <legend class="form_header">Sign Up</legend>
-                    <div class="form_row">
-                        <div class="form_group">
-                            <label class="basic_paragraph">*First name:</label>
-                            <input type="text" id="fname" name="fname" placeholder="Giannis" required>
+            <h2 class="head_header">Sign Up</h2>
+            <section class = "main_container">
+                <form class="form_signup" autocomplete="on" onsubmit="event.preventDefault(); validateForm();">
+                    <fieldset class="fieldset">
+                        <legend class="form_header">Sign Up Form </legend>
+                        <div class="form_row">
+                            <div class="form_group">
+                                <label class="basic_paragraph">*First name:</label>
+                                <input type="text" id="fname" name="fname" placeholder="Giannis" required>
+                            </div>
+                            <div class="form_group">
+                                <label class="basic_paragraph">*Last name:</label>
+                                <input type="text" id="lname" name="lname" placeholder="Giannopoulos" required>
+                            </div>
                         </div>
-                        <div class="form_group">
-                            <label class="basic_paragraph">*Last name:</label>
-                            <input type="text" id="lname" name="lname" placeholder="Giannopoulos" required>
+                        <div class="form_row">
+                            <div class="form_group">
+                                <label class="basic_paragraph">*E-mail:</label>
+                                <input type="text" id="email" name="email" placeholder="p310000@aueb.gr" required>
+                            </div>
+                            <div class="form_group">
+                                <label class="basic_paragraph">*Cell phone number:</label>
+                                <input type="number" id="cellnum" name="cellnum" placeholder="699999999" pattern="[0-9]{10}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form_row">
-                        <div class="form_group">
-                            <label class="basic_paragraph">*E-mail:</label>
-                            <input type="text" id="email" name="email" placeholder="p310000@aueb.gr" required>
+                        <div class="form_row">
+                            <div class="form_group">
+                                <label class="basic_paragraph">Home number:</label>
+                                <input type="number" id="homenum" name="homenum" placeholder="21000000" pattern="[0-9]{10}">
+                            </div>
+                            <div class="form_group">
+                                <label class="basic_paragraph">*Date of Birth:</label>
+                                <input type="date" id="dob" name="dob" placeholder="19/03/2001" pattern="dd-mm-yyyy" required>
+                            </div>
                         </div>
-                        <div class="form_group">
-                            <label class="basic_paragraph">*Cell phone number:</label>
-                            <input type="number" id="cellnum" name="cellnum" placeholder="699999999" pattern="[0-9]{10}">
+                        <div class="form_group_center">
+                            <label class="basic_paragraph">*Username:</label>
+                            <input type="text" id="username" name="username" required>
                         </div>
-                    </div>
-                    <div class="form_row">
-                        <div class="form_group">
-                            <label class="basic_paragraph">Home number:</label>
-                            <input type="number" id="homenum" name="homenum" placeholder="21000000" pattern="[0-9]{10}">
+                        <div class="form_row">
+                            <div class="form_group">
+                                <label class="basic_paragraph">*Password:</label>
+                                <input type="password" id="password" name="password" autocomplete="new-password" required>
+                            </div>
+                            <div class="form_group">
+                                <label class="basic_paragraph">*Password confirmation:</label>
+                                <input type="password" id="passwordc" name="passwordc" autocomplete="new-password" required>
+                            </div>
                         </div>
-                        <div class="form_group">
-                            <label class="basic_paragraph">*Date of Birth:</label>
-                            <input type="date" id="dob" name="dob" placeholder="19/03/2001" pattern="dd-mm-yyyy" required>
+                        <div class="form_group_center">
+                            <label class="basic_paragraph">Choose a way of contact</label>
+                            <select class="basic_paragraph" id="social_media" name="social_media">
+                                <option value="SMS">SMS</option>
+                                <option value="E-mail">E-mail</option>
+                                <option value="Viber">Viber</option>
+                                <option value="WhatsApp">WhatsApp</option>
+                            </select>
                         </div>
-                    </div>
-                   <div class="form_group_center">
-                        <label class="basic_paragraph">*Username:</label>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-                    <div class="form_row">
-                        <div class="form_group">
-                            <label class="basic_paragraph">*Password:</label>
-                            <input type="password" id="password" name="password" autocomplete="new-password" required>
+                        <div class="form_group_center">
+                            <label class="basic_paragraph">Ad preferences</label>
+                            <details id="cat">
+                                <summary class="basic_paragraph">Choose up to 3 categories</summary>
+                                <ul class="basic_paragraph">
+                                    <input class="check" type="checkbox" id="real_estate" name="real_estate"></input>
+                                    <label for="real_estate">Real estate</label>
+                                    <input class="check" type="checkbox" id="vehicles" name="vehicles"></input>
+                                    <label for="vehicles">Vehicles</label>
+                                    <input class="check" type="checkbox" id="technology" name="technology"></input>
+                                    <label for="technology">Technology</label>
+                                    <input class="check" type="checkbox" id="music" name="music"></input>
+                                    <label for="music">Music</label>
+                                    <input class="check" type="checkbox" id="sports" name="sports"></input>
+                                    <label for="sports">Sports</label>
+                                    <input class="check" type="checkbox" id="health" name="health"></input>
+                                    <label for="health">Health</label>
+                                </ul>
+                            </details>
                         </div>
-                        <div class="form_group">
-                            <label class="basic_paragraph">*Password confirmation:</label>
-                            <input type="password" id="passwordc" name="passwordc" autocomplete="new-password" required>
+                        <div class="form_group_center">
+                            <label class="basic_paragraph">Salary range</label>
+                            <select class="basic_paragraph" id="salary_range" name="salary_range">
+                                <option value="low">Lower than 8.000 per year</option>
+                                <option value="medium">8.000 to 20.000 per year</option>
+                                <option value="high">Higher than 20.000 per year</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="form_group_center">
-                        <label class="basic_paragraph">Choose a way of contact</label>
-                        <select class="basic_paragraph" id="social_media" name="social_media">
-                            <option value="SMS">SMS</option>
-                            <option value="E-mail">E-mail</option>
-                            <option value="Viber">Viber</option>
-                            <option value="WhatsApp">WhatsApp</option>
-                        </select>
-                    </div>
-                    <div class="form_group_center">
-                        <label class="basic_paragraph">Ad preferences</label>
-                        <details id="cat">
-                            <summary class="basic_paragraph">Choose up to 3 categories</summary>
-                            <ul class="basic_paragraph">
-                              <input class="check" type="checkbox" id="real_estate" name="real_estate"></input>
-                              <label for="real_estate">Real estate</label>
-                              <input class="check" type="checkbox" id="vehicles" name="vehicles"></input>
-                              <label for="vehicles">Vehicles</label>
-                              <input class="check" type="checkbox" id="technology" name="technology"></input>
-                              <label for="technology">Technology</label>
-                              <input class="check" type="checkbox" id="music" name="music"></input>
-                              <label for="music">Music</label>
-                              <input class="check" type="checkbox" id="sports" name="sports"></input>
-                              <label for="sports">Sports</label>
-                              <input class="check" type="checkbox" id="health" name="health"></input>
-                              <label for="health">Health</label>
-                            </ul>
-                        </details>
-                    </div>
-                    <div class="form_group_center">
-                        <label class="basic_paragraph">Salary range</label>
-                        <select class="basic_paragraph" id="salary_range" name="salary_range">
-                            <option value="low">Lower than 8.000 per year</option>
-                            <option value="medium">8.000 to 20.000 per year</option>
-                            <option value="high">Higher than 20.000 per year</option>
-                        </select>
-                    </div>
-                    <div class="form_group_center">
-                        <label class="basic_paragraph">City of preference for ads</label>
-                        <select class="basic_paragraph" id="city" name="city">
-                            <option value="ath">Athens</option>
-                            <option value="patra">Patra</option>
-                            <option value="skg">Thessaloniki</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form_group_center">
-                        <label class="basic_paragraph">Are you signing up to post or to buy?</label>
-                    </div>
-                    <div class="form_row" id="butt1">
-                        <div class="form_group">
-                            <button class="basic_paragraph active"  type="button" id="post_ad" name="post_ad">Post</input>
+                        <div class="form_group_center">
+                            <label class="basic_paragraph">City of preference for ads</label>
+                            <select class="basic_paragraph" id="city" name="city">
+                                <option value="ath">Athens</option>
+                                <option value="patra">Patra</option>
+                                <option value="skg">Thessaloniki</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
-                        <div class="form_group">
-                            <button class="basic_paragraph" type="button" id="buy" name="buy">Buy</input>
+                        <div class="form_group_center">
+                            <label class="basic_paragraph">Are you signing up to post or to buy?</label>
                         </div>
-                    </div>
-                    <div class="form_group_center">
-                        <label class="basic_paragraph">Where you reffered by a previous user?</label>
-                    </div>
-                    <div class="form_row" id="butt2">
-                        <div class="form_group">
-                            <button class="basic_paragraph active"  type="button" id="reffered" name="reffered">Yes</input>
+                        <div class="form_row" id="butt1">
+                            <div class="form_group">
+                                <button class="basic_paragraph active"  type="button" id="post_ad" name="post_ad">Post</input>
+                            </div>
+                            <div class="form_group">
+                                <button class="basic_paragraph" type="button" id="buy" name="buy">Buy</input>
+                            </div>
                         </div>
-                        <div class="form_group">
-                            <button class="basic_paragraph" type="button" id="not_reffered" name="not_reffered">No</input>
+                        <div class="form_group_center">
+                            <label class="basic_paragraph">Where you reffered by a previous user?</label>
                         </div>
-                    </div>
-                    <div class="form_group_center">
-                        <input class="submit" type="submit" value="Submit">
-                    </div>
-                </fieldset> 
-            </form>
+                        <div class="form_row" id="butt2">
+                            <div class="form_group">
+                                <button class="basic_paragraph active"  type="button" id="reffered" name="reffered">Yes</input>
+                            </div>
+                            <div class="form_group">
+                                <button class="basic_paragraph" type="button" id="not_reffered" name="not_reffered">No</input>
+                            </div>
+                        </div>
+                        <div class="form_group_center">
+                            <input class="submit" type="submit" value="Submit">
+                        </div>
+                    </fieldset> 
+                </form>
+            </section>    
         </main>
         <footer>
-            <a href=""><img id="x_logo" src="../assets/x-logo.png" width="50" height="50" alt="X"></a> 
-            <a href=""><img src="../assets/facebook-logo.png" width="50" height="50" alt="Facebook"></a> 
-            <a href=""><img src="../assets/email.png" width="50" height="50" alt="Email"></a> 
-            <a href=""><img src="../assets/telephone.png" width="50" height="50" alt="Telephone"></a>
+            <a href="https://twitter.com/home"><img id="x_logo" src="../assets/x-logo.png" width="50" height="50" alt="X"></a> 
+            <a href="https://facebook.com"><img src="../assets/facebook-logo.png" width="50" height="50" alt="Facebook"></a> 
+            <a href="#" onclick="copyToClipboard('Email'); return false;" id="Email"><div class="footer-hidden" id="Email-text">email@example.com</div><img src="../assets/email.png" width="50" height="50" alt="Email"></a> 
+            <a href="#" onclick="copyToClipboard('Phone'); return false;" id="Phone"><div class="footer-hidden" id="Phone-text">+30 2100000000</div><img src="../assets/telephone.png" width="50" height="50" alt="Telephone"></a>
         </footer>
     </body>
         

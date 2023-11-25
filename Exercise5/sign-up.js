@@ -89,3 +89,15 @@ function checkDate(){
         }
     }
 }
+
+//Used to copy mail and phone to clipboard
+function copyToClipboard(id) {
+    // Find right element (phone or email)
+    var text = document.getElementById(id+"-text").textContent;
+
+    // Copy the selected text to the clipboard
+    navigator.clipboard.writeText(text);
+
+    // Optionally, provide some visual feedback to the user
+    alert("Copied: " + text);
+  }
