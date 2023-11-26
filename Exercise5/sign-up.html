@@ -11,7 +11,8 @@
     
     <body>
         <header class="grid_header">
-            <a href="index.html"  ><img  id="logo_image" class="grid_header" src="../assets/logo.png" alt="logo" /></a>
+            <a href="index.html"><img id="logo_image" class="grid_header" srcset="../assets/logo-480w.png 480w"
+                sizes="(max-width: 600px) 480px" src="../assets/logo.png" alt="logo"></a>
         </header>
         <nav id="page_nav" class="grid_header">
             <ul class="link_container">
@@ -47,13 +48,13 @@
                             </div>
                             <div class="form_group">
                                 <label class="basic_paragraph">*Cell phone number:</label>
-                                <input type="number" id="cellnum" name="cellnum" placeholder="699999999" pattern="[0-9]{10}">
+                                <input type="tel" id="cellnum" name="cellnum" placeholder="699999999" pattern="[0-9]{10}">
                             </div>
                         </div>
                         <div class="form_row">
                             <div class="form_group">
                                 <label class="basic_paragraph">Home number:</label>
-                                <input type="number" id="homenum" name="homenum" placeholder="21000000" pattern="[0-9]{10}">
+                                <input type="tel" id="homenum" name="homenum" placeholder="21000000" pattern="[0-9]{10}">
                             </div>
                             <div class="form_group">
                                 <label class="basic_paragraph">*Date of Birth:</label>

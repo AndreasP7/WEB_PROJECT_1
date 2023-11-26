@@ -408,7 +408,7 @@ a,.small_header{
   }
   
 /*Sign up form standard fields*/  
-input[type="text"],input[type="number"],input[type="date"],input[type="password"], select, textarea, details,button,.submit{
+input[type="text"],input[type="number"],input[type="tel"],input[type="date"],input[type="password"], select, textarea, details,button,.submit{
     width: 100%;
     padding: 12px;
     border: 1px solid rgb(163, 197, 186);
@@ -421,7 +421,7 @@ input[type="text"],input[type="number"],input[type="date"],input[type="password"
   }
 
 /*Sign up form standard fields hover*/   
-input[type="text"]:hover,input[type="number"]:hover,input[type="date"]:hover,input[type="password"]:hover, select:hover, textarea:hover, details:hover,button:hover,.submit:hover{ 
+input[type="text"]:hover,input[type="number"]:hover,input[type="tel"]:hover,input[type="date"]:hover,input[type="password"]:hover, select:hover, textarea:hover, details:hover,button:hover,.submit:hover{ 
     background: rgb(163, 197, 186);
 }
 /*Sign up form submit hover*/  

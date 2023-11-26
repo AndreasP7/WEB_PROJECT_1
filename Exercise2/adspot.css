@@ -23,7 +23,7 @@ th,td{
     background-color: rgb(163, 197, 186);
 }
 /*Navigation Menu hover effect*/
-#page_nav:hover{
+.nav_link:hover{
     color: white;
 }
 /*Shadow effect for the main logo*/
