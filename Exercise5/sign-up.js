@@ -1,31 +1,31 @@
-window.onload=function(){
+window.onload=function(){//validation function run once page has loaded
     buttons()
     checkTel()
     checkpass()
     checkDate()
 }
-function validateForm(){
+function validateForm(){//func for validating the form (for checkbox elements)
     let cat=document.getElementById("cat")
-    var checked=cat.querySelectorAll('input[type="checkbox"]:checked').length
-    if(checked>3){
+    var checked=cat.querySelectorAll('input[type="checkbox"]:checked').length//find checkboxes that are checked 
+    if(checked>3){//if they are more than 3 then deny submit=
         alert("Please select up to 3 categories");
         return false;
     }
     alert("Succesfully submited")
     return true;
 }
-function buttons(){
-    var post_buy=document.getElementById("butt1")
-    var prev_use=document.getElementById("butt2")
-    var btns1=post_buy.getElementsByClassName("basic_paragraph")
-    var btns2=prev_use.getElementsByClassName("basic_paragraph")
-    for(var i=0;i<btns1.length;i++){
-            btns1[i].addEventListener("click", function() {
+function buttons(){//function for questionaire buttons
+    var post_buy=document.getElementById("butt1")//post or buy 
+    var prev_use=document.getElementById("butt2")//reference
+    var btns1=post_buy.getElementsByClassName("basic_paragraph")//2 choices
+    var btns2=prev_use.getElementsByClassName("basic_paragraph")//2 choices
+    for(var i=0;i<btns1.length;i++){//find buttons-choices
+            btns1[i].addEventListener("click", function() {//event listener
             current = post_buy.getElementsByClassName("active");
             if(current.length>0){
-                current[0].className = current[0].className.replace("active", "basic_paragraph");
+                current[0].className = current[0].className.replace("active", "basic_paragraph");//make other buttons inactive
             }
-            this.className="active";
+            this.className="active";//button was clicked, so make it active
         });
     }
     for(var i=0;i<btns2.length;i++){
