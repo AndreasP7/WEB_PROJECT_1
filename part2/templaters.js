@@ -45,7 +45,7 @@ function adsSubCategory(data){
         <article class="ad-container">
         <a class="ad_link" href="">
             <h1 class="small_header">{{title}}</h1>
-            <div class="product_image" id="product_image_{{id}}"></div>
+            <div class="product_image_box" id="product_image_{{id}}"></div>
             <div class ="ad_info"><p class="basic_paragraph">{{description}}</p></div>
             <h3 class="small_header">{{cost}}€</h3>
             <details class="ad_specs">
