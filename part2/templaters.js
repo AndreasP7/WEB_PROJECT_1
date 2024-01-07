@@ -27,6 +27,7 @@ function adsCategory(data){
                     sizes="(max-width: 600px) 480px" src="https://wiki-ads.onrender.com/{{images.[0]}}" ></div>
                 <div class ="ad_info"><p class="basic_paragraph">{{description}}</p></div>
                 <h3 class="small_header">{{cost}}€</h3>
+                <button class="add_to_fav" onclick="add_to_favourites()"><img class="heart-icon" src="../assets/heart.svg" alt="Heart Icon"> </button>
                 </a>
             </article>
         {{/each}}`)

@@ -561,6 +561,108 @@ input[type=checkbox]:checked:disabled + label:before {
     display: none;
 }
 
+.log_in_container{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    
+    padding: 10%;
+}
+
+.connected_user_container{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    display: none;
+    padding: 10%;
+    font-family:  Georgia, 'Times New Roman', Times, serif ;
+    font-weight: bold;
+}
+
+#connected_username{
+    display: inline;
+}
+
+.active_heart{
+    background: rgb(126, 187, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    margin: 50px;
+}
+
+.active_heart::before{
+    top: -50px;
+    left: 0;
+    content: "";
+    background:rgb(126, 187, 168);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+.active_heart:after{
+    left: 50px;
+    top: 0;
+    content: "";
+    background:rgb(126, 187, 168);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+
+.inactive_heart{
+    background: rgb(77, 78, 78);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    margin: 50px;
+}
+
+.inactive_heart::before{
+    top: -50px;
+    left: 0;
+    content: "";
+    background:rgb(77, 78, 78);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+.inactive_heart:after{
+    left: 50px;
+    top: 0;
+    content: "";
+    background:rgb(77, 78, 78);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+.add_to_fav{
+    text-transform: capitalize;
+    fill:rgb(126, 187, 168) ; 
+    border-radius: 10px;
+    padding: 1%;
+    text-align: center;
+    width: 10%;
+    height: auto;
+    
+}
+
 
   
  
@@ -569,7 +671,7 @@ input[type=checkbox]:checked:disabled + label:before {
     /*body has one column now and 4 rows*/
     body{
         grid-template-columns: auto;
-        grid-template-rows: auto auto 1fr auto;
+        grid-template-rows: auto auto auto 1fr auto;
     }
     #logo_image{
         max-width: 100%;
@@ -598,12 +700,12 @@ input[type=checkbox]:checked:disabled + label:before {
 
     
     main{
-        grid-row: 3/4;
+        grid-row: 4/5;
         grid-column: 1/2;
 
     }
     footer{
-        grid-row: 4/5;
+        grid-row: 5/6;
         grid-column: 1/2;
     }
 
@@ -679,6 +781,13 @@ input[type=checkbox]:checked:disabled + label:before {
         width:85%;
     }
     
+    .log_in_container{
+        grid-column: 1/2;
+        grid-row: 3/4;
+        
+        padding: 10%;
+    }
+
     
 
     
