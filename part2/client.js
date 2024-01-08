@@ -60,14 +60,24 @@ function connect(event){
       event.preventDefault();
 }
 
-function add_to_favourites(){
-
+function add_to_favourites(adId){
     
+    
+    console.log(adId)
     if (connected){
       console.log("AFS")
+      let username = user.username;
+      let sessionId = user.sessionId;
+      let ad_code = document.getElementById(adId);
+      let ad_image = document.getElementById("image" + adId).src;
+      let ad_title = document.getElementById("title"+ adId).textContent;
+      let ad_cost = document.getElementById("cost"+ adId).textContent;
+      let ad_desc = document.getElementById("desc"+ adId).textContent;;
+
+      
     }
     else{
-      alert("You have to log in first")
+      alert("Please log-in to add to favourites")
       return;
     }
 

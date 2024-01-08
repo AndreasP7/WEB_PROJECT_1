@@ -1,5 +1,7 @@
 
 const UserDAO = require('./models/users')
+const { FavouritesDAO, Favourite } = require('./models/favourites');
+
 const express = require('express')
 
 const app = express()
@@ -7,6 +9,7 @@ const app = express()
 app.use(express.json());
 
 const userDao = new UserDAO();
+const favouritesDAO = new FavouritesDAO();
 
 let username;
 let psw;
@@ -46,5 +49,10 @@ app.post('/user', function(req,res){
     
 })
 
+app.post('/fav', function(req,res){
+        
+})
 
-app.listen(8080)
+
+
+app.listen(8080);
