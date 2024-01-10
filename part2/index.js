@@ -40,6 +40,7 @@ app.post('/user', function(req,res){
     }
     else{
         let sessionId = authenticate.uuid;
+        favouritesDAO.addUser(sessionId, username)
         res.type("application/json")
         res.status( 200);
         res.send({ sessionId: sessionId })
@@ -49,8 +50,48 @@ app.post('/user', function(req,res){
     
 })
 
-app.post('/fav', function(req,res){
+
+app.post('/add_favourite', function(req,res){
+    
+    let sessionId = req.body.sessionId;
+    let username = req.body.username ;
+
+
+    const u = userDao.findUser(username);
+
+    
+    if(u && u.sessionId === sessionId){
+        favouritesDAO.addFavourite(username,sessionId,req.body);
         
+        
+        res.sendStatus(200);
+        
+    }
+    else{
+        res.sendStatus(401);
+    }
+
+})
+
+app.post('/remove_favourite', function(req,res){
+    
+    let sessionId = req.body.sessionId;
+    let username = req.body.username ;
+
+
+    const u = userDao.findUser(username);
+
+    
+    if(u && u.sessionId === sessionId){
+        favouritesDAO.removeFavourite(username,sessionId,req.body);
+        
+        res.sendStatus(200);
+        
+    }
+    else{
+        res.sendStatus(401);
+    }
+
 })
 
 

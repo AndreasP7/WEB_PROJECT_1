@@ -581,87 +581,39 @@ input[type=checkbox]:checked:disabled + label:before {
     display: inline;
 }
 
-.active_heart{
-    background: rgb(126, 187, 168);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100px;
-    position: relative;
-    top: 0;
-    transform: rotate(-45deg);
-    margin: 50px;
-}
-
-.active_heart::before{
-    top: -50px;
-    left: 0;
-    content: "";
-    background:rgb(126, 187, 168);
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-}
-
-.active_heart:after{
-    left: 50px;
-    top: 0;
-    content: "";
-    background:rgb(126, 187, 168);
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-}
-
-
-.inactive_heart{
-    background: rgb(77, 78, 78);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100px;
-    position: relative;
-    top: 0;
-    transform: rotate(-45deg);
-    margin: 50px;
-}
-
-.inactive_heart::before{
-    top: -50px;
-    left: 0;
-    content: "";
-    background:rgb(77, 78, 78);
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-}
-
-.inactive_heart:after{
-    left: 50px;
-    top: 0;
-    content: "";
-    background:rgb(77, 78, 78);
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-}
-
 .add_to_fav{
-    text-transform: capitalize;
-    fill:rgb(126, 187, 168) ; 
-    border-radius: 10px;
-    padding: 1%;
+    background: none;
+    padding: 0;
+    width: 100%;
+    height:auto;
     text-align: center;
-    width: 10%;
-    height: auto;
+    
+
     
 }
+
+
+
+
+.heart_icon {
+    fill: rgba(55, 109, 92, 0);
+    stroke:rgb(55, 109, 92);
+    width: 10%;
+    height: auto;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.heart_icon:hover{
+    fill: rgb(55, 109, 92);
+}
+
+.active_heart{
+    fill: rgb(55, 109, 92);
+}
+
+
 
 
   
