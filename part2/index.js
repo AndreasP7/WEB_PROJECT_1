@@ -63,8 +63,33 @@ app.post('/add_favourite', function(req,res){
     if(u && u.sessionId === sessionId){
         favouritesDAO.addFavourite(username,sessionId,req.body);
         
-        res.status( 200);
         
+        res.sendStatus(200);
+        
+    }
+    else{
+        res.sendStatus(401);
+    }
+
+})
+
+app.post('/remove_favourite', function(req,res){
+    
+    let sessionId = req.body.sessionId;
+    let username = req.body.username ;
+
+
+    const u = userDao.findUser(username);
+
+    
+    if(u && u.sessionId === sessionId){
+        favouritesDAO.removeFavourite(username,sessionId,req.body);
+        
+        res.sendStatus(200);
+        
+    }
+    else{
+        res.sendStatus(401);
     }
 
 })

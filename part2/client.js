@@ -68,6 +68,7 @@ function connect(event){
 
 function add_to_favourites(adId){
     
+    let heart = document.getElementById("heart_icon"+adId);
     
     console.log(adId)
     if (connected){
@@ -95,6 +96,7 @@ function add_to_favourites(adId){
       })
       .then(response => {
         if (response.status === 200) {
+            heart.classList.add("active_heart");
             return response.json(); 
         } else if (response.status === 401) {
             
@@ -110,5 +112,73 @@ function add_to_favourites(adId){
       return;
     }
 
+}
+
+function remove_from_favourites(adId){
+    
+  let heart = document.getElementById("heart_icon"+adId);  
+  console.log(adId)
+  if (connected){
+    console.log("RFS")
+    
+    
+    let adData = {
+      username: user.username,
+      sessionId: user.sessionId,
+      ad_code: adId,
+      ad_image: document.getElementById("image" + adId).src,
+      ad_title: document.getElementById("title" + adId).textContent,
+      ad_cost: document.getElementById("cost" + adId).textContent,
+      ad_desc: document.getElementById("desc" + adId).textContent
+    };
+
+    let adStr = JSON.stringify(adData);
+
+    fetch(serverUrl + '/remove_favourite', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body:adStr
+    })
+    .then(response => {
+      if (response.status === 200) {
+          heart.classList.remove("active_heart")
+          return response.json(); 
+      } else if (response.status === 401) {
+          
+          alert("Please log-in to remove from favourites")
+          throw new Error('Unauthorized');
+      }
+    })
+    .catch(error => console.error('Error:', error.message));
+
+  }
+  
+
+}
+
+
+
+function toggleFavourite(adId) {
+  var button = document.querySelector('#heart_icon'+adId);
+  
+  
+  
+  if(connected){
+    button.classList.toggle('active_heart');
+    if (button.classList.contains('active_heart')) {
+      // The button is now active, add to favorites or perform other actions
+      add_to_favourites(adId);
+    } 
+    else {
+      remove_from_favourites(adId);
+    }
+  }
+  else{
+    alert("Please log-in to add to favourites")
+    return;
+  }
+  
 }
 

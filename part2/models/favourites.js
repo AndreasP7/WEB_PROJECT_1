@@ -39,21 +39,28 @@ class FavouritesDAO{
 
     removeFavourite(username,sessionId,fav){
 
-        const user = this.favourites.find(f => f.user.username === username && f.user.sessionId === sessionId);
-        
+        const user = this.users.find(u => u.username === username && u.sessionId === sessionId);
+        if (user){
+            var index = this.favourites.findIndex(function(item) {
+                return item.username === fav.username && item.sessionId === fav. sessionId && item.ad_code === fav.ad_code;
+              });
 
-        if (user) {
-            this.favourites = this.favourites.map(item => {
-                if (item.user.username === username && item.user.sessionId === sessionId) {
-                  
-                  item.favs = item.favs.filter(f => f !== fav);
-                }
-            });    
-        } else {
+            if (index !== -1) {
+            // Remove the item at the found index
+            this.favourites.splice(index, 1);
+            console.log('Item removed at index ' + index);
+            } else {
+            console.error('Item not found: ');
+            }  
+              
+        }
+        else{
             // If the user is not found or the session ID doesn't match, you can handle this accordingly
             console.log(`Invalid username or session ID for ${username}.`);
             return 401;
         }
+        
+        
     }
 }
 
