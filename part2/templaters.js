@@ -62,8 +62,9 @@ function adsSubCategory(data){
         </a>
         </article>
     {{/each}}`)
-    return temp({ list: data });
+    return temp({ list: data });    
 }
+
 function build_specs(data){
     console.log(data)
     let temp=Handlebars.compile(`{{#each list}}
@@ -74,3 +75,18 @@ function build_specs(data){
     {{/each}}`)
     return temp({ list: data });
 }
+function adFavs(data){
+    let temp=Handlebars.compile(`{{#each list}}
+            <article class="ad-container" id = "ad{{ad_code}}">
+                
+                <h1 class="small_header" id = "title{{ad_code}}">{{ad_title}}</h1>
+            
+                <div class="product_image" "><img id = "image{{ad_code}}"
+                    sizes="(max-width: 600px) 480px" src="{{ad_image}}" ></div>
+                <div class ="ad_info"><p class="basic_paragraph" id = "desc{{ad_code}}">{{ad_desc}}</p></div>
+                <h3 class="small_header" id = "cost{{ad_code}}">{{ad_cost}}</h3>
+                </a>
+            </article>
+        {{/each}}`)
+    return temp({ list: data });
+  }

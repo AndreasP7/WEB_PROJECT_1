@@ -94,6 +94,20 @@ app.post('/remove_favourite', function(req,res){
 
 })
 
+app.post('/get_favourites', function(req,res){
+    
+    let sessionId = req.body.sessionId;
+    let username = req.body.username ;
+    const u = userDao.findUser(username);
+    if(u && u.sessionId === sessionId){
+        res.type("application/json")
+        let favs=JSON.stringify(favouritesDAO.getFavorites(u.username,u.sessionId))
+        res.json(favs)
+    }
+    else{
+        res.sendStatus(401);
+    }
 
+})
 
 app.listen(8080);
