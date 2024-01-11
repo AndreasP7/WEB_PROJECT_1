@@ -62,6 +62,22 @@ class FavouritesDAO{
         
         
     }
+    getFavorites(username,sessionId){
+        const user = this.users.find(u => u.username === username && u.sessionId === sessionId);
+        if (user) {
+            const favourite = this.favourites;
+            
+            if (!favourite) {
+                return("No favorites")
+            } else {
+                return favourite;
+            }
+        } else {
+            // If the user is not found or the session ID doesn't match, you can handle this accordingly
+            console.log(`Invalid username or session ID for ${username}.`);
+            return 401;
+        }
+    }
 }
 
 class Favourite{

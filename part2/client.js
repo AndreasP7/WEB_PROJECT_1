@@ -5,7 +5,7 @@ const form = document.getElementById("log_in_form");
 const form_container = document.getElementsByClassName("log_in_container");
 const user_container = document.getElementsByClassName("connected_user_container");
 const connected_user = document.getElementsByClassName("user");
-console.log("Found element:", connected_user);
+const user_fav_link=document.getElementsByClassName("userfav");
 
 let connected = false;
 let user = {
@@ -16,7 +16,6 @@ let user = {
 function connect(event){
     let username = document.getElementById('uname').value;
     let password = document.getElementById('psw').value;
-
     
     var formData = {
         username: username,
@@ -52,6 +51,7 @@ function connect(event){
         user_container[0].style.display = "block";
         if(connected_user){
           connected_user[0].textContent = username
+          user_fav_link[0].href="favorite-ads.html?username="+username+"&sessionId="+data.sessionId
         }
         connected = true;
         
@@ -97,7 +97,6 @@ function add_to_favourites(adId){
       .then(response => {
         if (response.status === 200) {
             heart.classList.add("active_heart");
-            return response.json(); 
         } else if (response.status === 401) {
             
             alert("Please log-in to add to favourites")
@@ -144,7 +143,6 @@ function remove_from_favourites(adId){
     .then(response => {
       if (response.status === 200) {
           heart.classList.remove("active_heart")
-          return response.json(); 
       } else if (response.status === 401) {
           
           alert("Please log-in to remove from favourites")
@@ -154,17 +152,9 @@ function remove_from_favourites(adId){
     .catch(error => console.error('Error:', error.message));
 
   }
-  
-
 }
-
-
-
 function toggleFavourite(adId) {
   var button = document.querySelector('#heart_icon'+adId);
-  
-  
-  
   if(connected){
     button.classList.toggle('active_heart');
     if (button.classList.contains('active_heart')) {
@@ -179,6 +169,35 @@ function toggleFavourite(adId) {
     alert("Please log-in to add to favourites")
     return;
   }
-  
+}
+
+function getFav(username,sessionId){
+  let adData = {
+    username: username,
+    sessionId: sessionId,
+  };
+  let adStr = JSON.stringify(adData);
+  fetch(serverUrl + '/get_favourites', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body:adStr
+  })
+  .then(response => {
+    if (response.status === 200) {
+        return response.json(); 
+    } 
+    else if (response.status === 401) {
+      alert("Please log-in to view favourites")
+      throw new Error('Unauthorized');
+    }
+  })
+  .then(data => {
+    let favs=JSON.parse(data)
+    console.log(favs)
+    document.getElementById("prod_main").innerHTML=adFavs(favs) 
+  })
+  .catch(error => console.error('Error:', error.message));
 }
 

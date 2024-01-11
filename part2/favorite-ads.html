@@ -1,32 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Categories</title>
         <meta charset="UTF-8">
         <meta name="description" content="Ad and marketplace website.">
         <link href="./adspot.css" rel="stylesheet" type="text/css"/>
         <script src="api.js" type="text/javascript"></script>
         <script src="templaters.js" type="text/javascript"></script>
         <script src="handlebars.js" type="text/javascript"></script>
-        
         <script src="client.js" type="text/javascript"></script>
         <script>
             const url = window.location;
             const searchParams = new URLSearchParams(url.search)
-            const categoryId = searchParams.getAll("categoryId")[0];
-            fCategories().then(data => {
-            data.forEach(category => {
-                if (category.id == categoryId) {
-                    document.title = category.title
-                    document.getElementById("category_title").innerHTML = category.title;
-                    fCategoryAds(category.id).then(data=>{
-                        console.log(data)
-                        document.getElementById("prod_main").innerHTML=adsCategory(data)
-                })
-                }
-            });
-
-        })
+            const uname = searchParams.getAll("username")[0];
+            const sessId = searchParams.getAll("sessionId")[0];
+            getFav(uname,sessId);
         </script>
     </head>
     <body>
@@ -36,27 +23,11 @@
         </header>
         <nav id="page_nav" class="grid_header">
             <ul class="link_container">
-                <li><a  class="nav_link" href="index.html">Home</a></li> 
+                <li><a  class="nav_link" href="index.html">Home</a></li>  
                 <li><a  class="nav_link" href="contact.html">Contact</a></li> 
                 <li><a  class="nav_link" href="about-us.html">About Us</a></li>
-
             </ul>
         </nav>
-        <div class="log_in_container" >
-            <form id="log_in_form">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Username" name="username" id ='uname' required>
-            
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Password" name="password" id ="psw" required>
-            
-                <button type="submit" id="log_in_button" onclick="connect(event)" >Login</button>
-            </form>   
-        </div>
-        <div class="connected_user_container">
-            <span class="user">username</span><br>
-            <a class="userfav" href="" style="font-weight: normal;font-family:monospace;">Favourites</a>
-        </div>
         <main>
             <h1 class="head_header" id="category_title"></h1>
             <section class="ads_main" id="prod_main"></section>
