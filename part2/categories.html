@@ -20,8 +20,10 @@
                     document.title = category.title
                     document.getElementById("category_title").innerHTML = category.title;
                     fCategoryAds(category.id).then(data=>{
-                        console.log(data)
                         document.getElementById("prod_main").innerHTML=adsCategory(data)
+                        fSubCategories(category.id).then(data=>{
+                            document.getElementById("subs").innerHTML=subsRadio(data)
+                        })
                 })
                 }
             });
@@ -42,6 +44,8 @@
 
             </ul>
         </nav>
+        <div class="subcategories" id="subs">
+        </div>
         <div class="log_in_container" >
             <form id="log_in_form">
                 <label for="uname"><b>Username</b></label>

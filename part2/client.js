@@ -6,7 +6,7 @@ const form_container = document.getElementsByClassName("log_in_container");
 const user_container = document.getElementsByClassName("connected_user_container");
 const connected_user = document.getElementsByClassName("user");
 const user_fav_link=document.getElementsByClassName("userfav");
-
+const ads=document.getElementsByClassName("ad-container")
 let connected = false;
 let user = {
   username: null,
@@ -200,4 +200,40 @@ function getFav(username,sessionId){
   })
   .catch(error => console.error('Error:', error.message));
 }
-
+function subs(event){
+  let btns = document.querySelectorAll('input[type="radio"]')
+  let check_id
+  for(let btn of btns){
+    if (btn.checked){
+      check_id=btn.id
+      break;
+    }
+  }
+  if(check_id=="all"){
+    for(ad of ads){
+      ad.style.display="block"
+    }
+  }
+  else{
+    if(check_id.slice(-2,-1)=="b"){
+      for(ad of ads){
+        if(check_id.slice(-1)!=ad.id.slice(-1)){
+          ad.style.display="none"
+        }
+        else{
+          ad.style.display="block"
+        }
+      }
+    }
+    else{
+      for(ad of ads){
+        if(check_id.slice(-2)!=ad.id.slice(-2)){
+          ad.style.display="none"
+        }
+        else{
+          ad.style.display="block"
+        }
+      }
+    }
+  }
+}
