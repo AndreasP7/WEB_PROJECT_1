@@ -560,7 +560,12 @@ input[type=checkbox]:checked:disabled + label:before {
 .footer-hidden{
     display: none;
 }
-
+.subcategories{
+    
+    grid-row: 2/3;
+    
+    padding: 10%;
+}
 .log_in_container{
     grid-column: 3/4;
     grid-row: 2/3;

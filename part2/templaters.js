@@ -1,5 +1,4 @@
 function categories(data){
-    console.log(data)
     let temp = Handlebars.compile(`{{#each list}}
             <a class="category_item" href="categories.html?categoryId={{id}}">
                     <h1 class="small_header">{{title}}</h1>
@@ -11,15 +10,14 @@ function categories(data){
     return temp({ list: data });
 }
 function subcategories(data){
-    console.log(data)
     let temp = Handlebars.compile(`{{#each list}}
             <a class="basic_paragraph" href="subcategories.html?subcategoryId={{id}}">{{title}}</a><br>
         {{/each}}`);
     return temp({ list: data });
 }
-function adsCategory(data){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+function adsCategory(data){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
     let temp=Handlebars.compile(`{{#each list}}
-            <article class="ad-container" id = "ad{{id}}">
+            <article class="ad-container" id = "ad{{id}}sub{{subcategory_id}}" >
                 
                 <h1 class="small_header" id = "title{{id}}">{{title}}</h1>
             
@@ -88,5 +86,14 @@ function adFavs(data){
                 </a>
             </article>
         {{/each}}`)
+    return temp({ list: data });
+  }
+  function subsRadio(data){
+    let temp=Handlebars.compile(`{{#each list}}
+            <input type="radio" id="sub{{id}}" name="subcat" value="{{id}}" onclick="subs(event)" />
+            <label for="sub{{id}}">{{title}}</label><br>
+        {{/each}}
+        <input type="radio" id="all" name="subcat" value="all" onclick="subs(event)"/>
+        <label for="all">Όλα</label><br>`)
     return temp({ list: data });
   }
