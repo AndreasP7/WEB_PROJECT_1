@@ -15,7 +15,9 @@ let username;
 let psw;
 let authenticate;
 
-userDao.registerUser("Andreas", "2002")
+userDao.registerUser("Andreas", "2002");
+userDao.registerUser("John12", "1234");
+userDao.registerUser("Mary", "127abc");
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*'); // Allow any origin to access the resource

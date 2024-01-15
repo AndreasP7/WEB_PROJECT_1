@@ -46,18 +46,16 @@ function build_img(data){
 function adsSubCategory(data){
     let temp=Handlebars.compile(`{{#each list}}
         <article class="ad-container">
-        <a class="ad_link" href="">
             <h1 class="small_header">{{title}}</h1>
             <div class="product_image_box" id="product_image_{{id}}"></div>
             <div class ="ad_info"><p class="basic_paragraph">{{description}}</p></div>
-            <h3 class="small_header">{{cost}}€</h3>
+            <h3 class="small_header ad_price">{{cost}}€</h3>
             <details class="ad_specs">
                     <summary class="small_header"></summary>
                     <table>
                         <tbody id="product_specs_{{id}}">
                         </tbody>
                     </table>
-        </a>
         </article>
     {{/each}}`)
     return temp({ list: data });    
