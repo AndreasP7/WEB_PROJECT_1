@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="description" content="Ad and marketplace website.">
-        <link href="./adspot.css" rel="stylesheet" type="text/css"/>
-        <script src="api.js" type="text/javascript"></script>
-        <script src="templaters.js" type="text/javascript"></script>
-        <script src="handlebars.js" type="text/javascript"></script>
+        <link href="./css/adspot.css" rel="stylesheet" type="text/css"/>
+        <script src="js/api.js" type="text/javascript"></script>
+        <script src="js/templaters.js" type="text/javascript"></script>
+        <script src="js/handlebars.js" type="text/javascript"></script>
         <script>
             const url = window.location;
             const searchParams = new URLSearchParams(url.search)
@@ -36,14 +36,12 @@
     </head>
     <body>
         <header class="grid_header">
-            <a href="index.html"><img id="logo_image" class="grid_header" srcset="../assets/logo-480w.png 480w"
-                sizes="(max-width: 600px) 480px" src="../assets/logo.png" alt="logo" ></a>
+            <a href="index.html"><img id="logo_image" class="grid_header" srcset="./assets/logo-480w.png 480w"
+                sizes="(max-width: 600px) 480px" src="./assets/logo.png" alt="logo" ></a>
         </header>
         <nav id="page_nav" class="grid_header">
             <ul class="link_container">
                 <li><a  class="nav_link" href="index.html">Home</a></li>  
-                <li><a  class="nav_link" href="contact.html">Contact</a></li> 
-                <li><a  class="nav_link" href="about-us.html">About Us</a></li>
             </ul>
         </nav>
         <main>
@@ -51,10 +49,10 @@
             <section class="ads_main" id="ads_main"></section>
         </main>
         <footer>
-            <a href="https://twitter.com/home"><img id="x_logo" src="../assets/x-logo.png" width="50" height="50" alt="X"></a> 
-            <a href="https://facebook.com"><img src="../assets/facebook-logo.png" width="50" height="50" alt="Facebook"></a> 
-            <a href="#" onclick="copyToClipboard('Email'); return false;" id="Email"><div class="footer-hidden" id="Email-text">email@example.com</div><img src="../assets/email.png" width="50" height="50" alt="Email"></a> 
-            <a href="#" onclick="copyToClipboard('Phone'); return false;" id="Phone"><div class="footer-hidden" id="Phone-text">+30 2100000000</div><img src="../assets/telephone.png" width="50" height="50" alt="Telephone"></a>
+            <a href="https://twitter.com/home"><img id="x_logo" src="./assets/x-logo.png" width="50" height="50" alt="X"></a> 
+            <a href="https://facebook.com"><img src="./assets/facebook-logo.png" width="50" height="50" alt="Facebook"></a> 
+            <a href="#" onclick="copyToClipboard('Email'); return false;" id="Email"><div class="footer-hidden" id="Email-text">email@example.com</div><img src="./assets/email.png" width="50" height="50" alt="Email"></a> 
+            <a href="#" onclick="copyToClipboard('Phone'); return false;" id="Phone"><div class="footer-hidden" id="Phone-text">+30 2100000000</div><img src="./assets/telephone.png" width="50" height="50" alt="Telephone"></a>
         </footer>
     </body>
         
