@@ -65,12 +65,13 @@ class FavouritesDAO{
     getFavorites(username,sessionId){
         const user = this.users.find(u => u.username === username && u.sessionId === sessionId);
         if (user) {
-            const favourite = this.favourites;
+
+            const fav = this.favourites.filter(item => item.username === username && item.sessionId === sessionId);
             
-            if (!favourite) {
+            if (!fav) {
                 return("No favorites")
             } else {
-                return favourite;
+                return fav;
             }
         } else {
             // If the user is not found or the session ID doesn't match, you can handle this accordingly
