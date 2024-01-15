@@ -21,8 +21,8 @@ class FavouritesDAO{
             const favourite = this.favourites.find(f => f.sessionId === sessionId && f.ad_code === fav.ad_code);
             
             if (!favourite) {
-                // Add the newFavorite to the favorites array
-                this.favourites.push(fav);
+                
+                this.favourites.push(new Favourite(fav));
                 console.log(`Added ${fav.ad_code} to ${username}'s favorites.`);
                 return 200;
             } else {
@@ -30,7 +30,7 @@ class FavouritesDAO{
                 return 0;
             }
         } else {
-            // If the user is not found or the session ID doesn't match, you can handle this accordingly
+            
             console.log(`Invalid username or session ID for ${username}.`);
             return 401;
         }
@@ -46,16 +46,16 @@ class FavouritesDAO{
               });
 
             if (index !== -1) {
-            // Remove the item at the found index
+            
             this.favourites.splice(index, 1);
-            console.log('Item removed at index ' + index);
+            console.log(`Removed favourite ${fav.ad_code} of user ${username}.`);
             } else {
-            console.error('Item not found: ');
+            console.error('Not found: ');
             }  
               
         }
         else{
-            // If the user is not found or the session ID doesn't match, you can handle this accordingly
+           
             console.log(`Invalid username or session ID for ${username}.`);
             return 401;
         }
@@ -74,7 +74,7 @@ class FavouritesDAO{
                 return fav;
             }
         } else {
-            // If the user is not found or the session ID doesn't match, you can handle this accordingly
+            
             console.log(`Invalid username or session ID for ${username}.`);
             return 401;
         }
@@ -82,14 +82,16 @@ class FavouritesDAO{
 }
 
 class Favourite{
-    constructor(username,sessionId, title, code, cost, desc, image){
-        this.username = username;
-        this.sessionId = sessionId;
-        this.title = title;
-        this.code = code;
-        this.cost = cost;
-        this.desc = desc;
-        this.image = image;
+    constructor(ad){
+
+        this.username = ad.username;
+        this.sessionId = ad.sessionId;
+        this.ad_title = ad.ad_title;
+        this.ad_code = ad.ad_code;
+        this.ad_cost = ad.ad_cost;
+        this.ad_desc = ad.ad_desc;
+        this.ad_image = ad.ad_image;
+
 
     }
 }
