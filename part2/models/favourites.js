@@ -6,7 +6,7 @@ class FavouritesDAO{
     addUser(sessionId, username) {
     
         this.favourites.push({username:username, sessionId:sessionId, favs:[]})
-        return user;
+        return {username:username, sessionId:sessionId};
     }
 
     addFavourite(username,sessionId, fav){
@@ -18,7 +18,6 @@ class FavouritesDAO{
             if (!favourite) {
                 
                 this.favourites[user].favs.push(new Favourite(fav));
-                console.log(this.favourites)
                 console.log(`Added ${fav.ad_code} to ${username}'s favorites.`);
                 return 200;
             } else {
