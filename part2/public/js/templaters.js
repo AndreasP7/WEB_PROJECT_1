@@ -1,4 +1,5 @@
-function categories(data){
+//templaters were made according to the first part of the exercise, modified for dynamic input of html code
+function categories(data){//generates a category with one pic
     let temp = Handlebars.compile(`{{#each list}}
             <a class="category_item" href="categories.html?categoryId={{id}}">
                     <h1 class="small_header">{{title}}</h1>
@@ -9,13 +10,13 @@ function categories(data){
         {{/each}}`);
     return temp({ list: data });
 }
-function subcategories(data){
+function subcategories(data){//generates the list of subcategories of a category
     let temp = Handlebars.compile(`{{#each list}}
             <a class="basic_paragraph" href="subcategories.html?subcategoryId={{id}}">{{title}}</a><br>
         {{/each}}`);
     return temp({ list: data });
 }
-function adsCategory(data){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+function adsCategory(data){//generates an ad that will be displayed in the category page with one pic                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
     let temp=Handlebars.compile(`{{#each list}}
             <article class="ad-container" id = "ad{{id}}sub{{subcategory_id}}" >
                 
@@ -35,7 +36,7 @@ function adsCategory(data){
         {{/each}}`)
     return temp({ list: data });
 }
-function build_img(data){
+function build_img(data){//helping function for the generation of all pictures in a subcategory add
     let temp=Handlebars.compile(`{{#each list}}
         <div class="product_image">
             <img src="https://wiki-ads.onrender.com/{{this}}"sizes="(max-width: 600px) 480px">
@@ -43,7 +44,7 @@ function build_img(data){
     {{/each}}`)
     return temp({ list: data });
 }
-function adsSubCategory(data){
+function adsSubCategory(data){//generates an ad that will be displayed in the subcategory page (picture is generated after) 
     let temp=Handlebars.compile(`{{#each list}}
         <article class="ad-container">
             <h1 class="small_header">{{title}}</h1>
@@ -61,8 +62,7 @@ function adsSubCategory(data){
     return temp({ list: data });    
 }
 
-function build_specs(data){
-    console.log(data)
+function build_specs(data){//generates the specs table for subcategories page
     let temp=Handlebars.compile(`{{#each list}}
         <tr>
             
@@ -71,7 +71,7 @@ function build_specs(data){
     {{/each}}`)
     return temp({ list: data });
 }
-function adFavs(data){
+function adFavs(data){//generates an ad for the my favourites page
     let temp=Handlebars.compile(`{{#each list}}
             <article class="ad-container" id = "ad{{ad_code}}">
                 
@@ -86,7 +86,7 @@ function adFavs(data){
         {{/each}}`)
     return temp({ list: data });
   }
-  function subsRadio(data){
+  function subsRadio(data){//generates the radio buttons for choosing subcategories in category ad page
     let temp=Handlebars.compile(`{{#each list}}
             <input type="radio" id="sub{{id}}" name="subcat" value="{{id}}" onclick="subs(event)" />
             <label for="sub{{id}}">{{title}}</label><br>

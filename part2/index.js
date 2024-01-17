@@ -96,14 +96,14 @@ app.post('/remove_favourite', function(req,res){
 
 })
 
-app.post('/get_favourites', function(req,res){
+app.post('/get_favourites', function(req,res){//getting favorites for the myfavouritees page
     
     let sessionId = req.body.sessionId;
     let username = req.body.username ;
-    const u = userDao.findUser(username);
-    if(u && u.sessionId === sessionId){
+    const u = userDao.findUser(username);//user existence check
+    if(u && u.sessionId === sessionId){//checking if the session id is the same so info is not shared with unintended users
         res.type("application/json")
-        let favs=JSON.stringify(favouritesDAO.getFavorites(u.username,u.sessionId))
+        let favs=JSON.stringify(favouritesDAO.getFavorites(u.username,u.sessionId))//return all favorites
         res.json(favs)
     }
     else{

@@ -171,20 +171,20 @@ function toggleFavourite(adId) {
   }
 }
 
-function getFav(username,sessionId){
+function getFav(username,sessionId){//function for my favorites page 
   let adData = {
     username: username,
     sessionId: sessionId,
   };
   let adStr = JSON.stringify(adData);
-  fetch(serverUrl + '/get_favourites', {
+  fetch(serverUrl + '/get_favourites', {//validate user
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body:adStr
   })
-  .then(response => {
+  .then(response => {//check for server response 
     if (response.status === 200) {
         return response.json(); 
     } 
@@ -193,30 +193,29 @@ function getFav(username,sessionId){
       throw new Error('Unauthorized');
     }
   })
-  .then(data => {
+  .then(data => {//data is in json format 
     let favs=JSON.parse(data)
-    console.log(favs)
-    document.getElementById("prod_main").innerHTML=adFavs(favs) 
+    document.getElementById("prod_main").innerHTML=adFavs(favs) //dynamically add the content to the page using templaters
   })
   .catch(error => console.error('Error:', error.message));
 }
-function subs(event){
+function subs(event){//func for adding choosing subcategories in category ads page
   let btns = document.querySelectorAll('input[type="radio"]')
   let check_id
-  for(let btn of btns){
+  for(let btn of btns){//find the button that is checked and save its id
     if (btn.checked){
       check_id=btn.id
       break;
     }
   }
-  if(check_id=="all"){
+  if(check_id=="all"){//if all is checked, we want to show all the ads on the page
     for(ad of ads){
       ad.style.display="block"
     }
   }
   else{
-    if(check_id.slice(-2,-1)=="b"){
-      for(ad of ads){
+    if(check_id.slice(-2,-1)=="b"){//id is one digit
+      for(ad of ads){//find the ads that are the check_id and display only them
         if(check_id.slice(-1)!=ad.id.slice(-1)){
           ad.style.display="none"
         }
@@ -225,8 +224,8 @@ function subs(event){
         }
       }
     }
-    else{
-      for(ad of ads){
+    else{//id is a two digit number
+      for(ad of ads){//find the ads that are the check_id and display only them
         if(check_id.slice(-2)!=ad.id.slice(-2)){
           ad.style.display="none"
         }
