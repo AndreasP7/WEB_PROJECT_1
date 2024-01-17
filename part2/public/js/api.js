@@ -1,4 +1,6 @@
 const temp_url = "https://wiki-ads.onrender.com";
+//each api in this file returns the fetches data from the path given depending on the user needs. 
+//it returns the data that it gets from the url
 async function fApi(temp_url){
     try {
         const res=await fetch(temp_url);
