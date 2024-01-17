@@ -1,28 +1,23 @@
 class FavouritesDAO{
     constructor(){
         this.favourites = []
-        this.users =[]
     }
 
     addUser(sessionId, username) {
-        const user = {
-          username,
-          sessionId,
-        };
-
-        this.users.push(user);
-        return user;
+    
+        this.favourites.push({username:username, sessionId:sessionId, favs:[]})
+        return {username:username, sessionId:sessionId};
     }
 
     addFavourite(username,sessionId, fav){
-        const user = this.users.find(u => u.username === username && u.sessionId === sessionId);
+        const user = this.favourites.findIndex(f => f.username === username && f.sessionId === sessionId);
         
-        if (user) {
-            const favourite = this.favourites.find(f => f.sessionId === sessionId && f.ad_code === fav.ad_code);
+        if (user != -1) {
+            const favourite = this.favourites[user].favs.find(f => f.ad_code === fav.ad_code);
             
             if (!favourite) {
                 
-                this.favourites.push(new Favourite(fav));
+                this.favourites[user].favs.push(new Favourite(fav));
                 console.log(`Added ${fav.ad_code} to ${username}'s favorites.`);
                 return 200;
             } else {
@@ -39,18 +34,18 @@ class FavouritesDAO{
 
     removeFavourite(username,sessionId,fav){
 
-        const user = this.users.find(u => u.username === username && u.sessionId === sessionId);
-        if (user){
-            var index = this.favourites.findIndex(function(item) {
-                return item.username === fav.username && item.sessionId === fav. sessionId && item.ad_code === fav.ad_code;
+        const user = this.favourites.findIndex(f => f.username === username && f.sessionId === sessionId);
+        if (user != -1){
+            var index = this.favourites[user].favs.findIndex(function(item) {
+                return item.ad_code === fav.ad_code;
               });
 
             if (index !== -1) {
             
-            this.favourites.splice(index, 1);
-            console.log(`Removed favourite ${fav.ad_code} of user ${username}.`);
+                this.favourites[user].favs.splice(index, 1);
+                console.log(`Removed favourite ${fav.ad_code} of user ${username}.`);
             } else {
-            console.error('Not found: ');
+                console.error('Not found: ');
             }  
               
         }
@@ -63,10 +58,10 @@ class FavouritesDAO{
         
     }
     getFavorites(username,sessionId){
-        const user = this.users.find(u => u.username === username && u.sessionId === sessionId);
-        if (user) {
+        const user = this.favourites.findIndex(f => f.username === username && f.sessionId === sessionId);
+        if (user != -1) {
 
-            const fav = this.favourites.filter(item => item.username === username && item.sessionId === sessionId);
+            const fav = this.favourites[user].favs;
             
             if (!fav) {
                 return("No favorites")
