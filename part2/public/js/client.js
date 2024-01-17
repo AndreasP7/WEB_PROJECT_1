@@ -1,7 +1,7 @@
 
 const serverUrl = 'http://localhost:8080';
 
-const form = document.getElementById("log_in_form");
+const form = document.getElementById("log_in_form");//username and password form
 const form_container = document.getElementsByClassName("log_in_container");
 const user_container = document.getElementsByClassName("connected_user_container");
 const connected_user = document.getElementsByClassName("user");
@@ -74,7 +74,7 @@ function add_to_favourites(adId){
     if (connected){
       console.log("AFS")
       
-      
+      //get ad info
       let adData = {
         username: user.username,
         sessionId: user.sessionId,
@@ -96,7 +96,7 @@ function add_to_favourites(adId){
       })
       .then(response => {
         if (response.status === 200) {
-            heart.classList.add("active_heart");
+            heart.classList.add("active_heart");//color the heart symbol
         } else if (response.status === 401) {
             
             alert("Please log-in to add to favourites")
@@ -120,7 +120,7 @@ function remove_from_favourites(adId){
   if (connected){
     console.log("RFS")
     
-    
+    //get ad info
     let adData = {
       username: user.username,
       sessionId: user.sessionId,
@@ -158,10 +158,11 @@ function toggleFavourite(adId) {
   if(connected){
     button.classList.toggle('active_heart');
     if (button.classList.contains('active_heart')) {
-      // The button is now active, add to favorites or perform other actions
+      //if heart is now active, add to favourites
       add_to_favourites(adId);
     } 
     else {
+      //if heart is not active, remove from
       remove_from_favourites(adId);
     }
   }

@@ -26,6 +26,8 @@ app.use((req, res, next) => {
     next();
 });
 
+
+//LS - user login/authentication
 app.post('/user', function(req,res){
     
     
@@ -42,7 +44,7 @@ app.post('/user', function(req,res){
     }
     else{
         let sessionId = authenticate.uuid;
-        favouritesDAO.addUser(sessionId, username)
+        favouritesDAO.addUser(sessionId, username) //add to favoutritesDAO
         res.type("application/json")
         res.status( 200);
         res.send({ sessionId: sessionId })
@@ -52,7 +54,7 @@ app.post('/user', function(req,res){
     
 })
 
-
+//AFS - add ad to favourites of a user
 app.post('/add_favourite', function(req,res){
     
     let sessionId = req.body.sessionId;
@@ -75,6 +77,7 @@ app.post('/add_favourite', function(req,res){
 
 })
 
+//Remove ad from favourites of a user
 app.post('/remove_favourite', function(req,res){
     
     let sessionId = req.body.sessionId;

@@ -10,13 +10,13 @@ class FavouritesDAO{
     }
 
     addFavourite(username,sessionId, fav){
-        const user = this.favourites.findIndex(f => f.username === username && f.sessionId === sessionId);
+        const user = this.favourites.findIndex(f => f.username === username && f.sessionId === sessionId);//search for the user, and get his index
         
         if (user != -1) {
             const favourite = this.favourites[user].favs.find(f => f.ad_code === fav.ad_code);
             
             if (!favourite) {
-                
+                //if ad not already in his favourites, add
                 this.favourites[user].favs.push(new Favourite(fav));
                 console.log(`Added ${fav.ad_code} to ${username}'s favorites.`);
                 return 200;
@@ -34,7 +34,7 @@ class FavouritesDAO{
 
     removeFavourite(username,sessionId,fav){
 
-        const user = this.favourites.findIndex(f => f.username === username && f.sessionId === sessionId);
+        const user = this.favourites.findIndex(f => f.username === username && f.sessionId === sessionId);//search for the user, and get his index
         if (user != -1){
             var index = this.favourites[user].favs.findIndex(function(item) {
                 return item.ad_code === fav.ad_code;
